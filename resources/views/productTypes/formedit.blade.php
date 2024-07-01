@@ -2,27 +2,28 @@
 
 @section('content')
     <div class="pagetitle">
-        <h1>Hotel Type</h1>
+        <h1>Product Type</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('hotel_types.index') }}">Hotel Type</a></li>
-                <li class="breadcrumb-item active">Create New Hotel Type</li>
+                <li class="breadcrumb-item"><a href="{{ route('product_types.index') }}">Product Type</a></li>
+                <li class="breadcrumb-item active">Edit Product Type</li>
             </ol>
         </nav>
     </div>
 
-    <form method="POST" action="{{ route('hotel_types.store') }}">
+    <form method="POST" action="{{ route('product_types.update', $rs->id) }}">
         @csrf
+        @method('PUT')
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Create New Hotel Type</h5>
+                <h5 class="card-title">Edit Product Type</h5>
 
                 <!-- Vertical Form -->
                 <form class="row g-3">
                     <div class="col-12">
-                        <label for="inputNanme4" class="form-label">Hotel Type Name :</label>
-                        <input type="text" class="form-control" id="inputNanme4" name="name">
+                        <label for="inputNanme4" class="form-label">Product Type Name :</label>
+                        <input type="text" class="form-control" id="inputNanme4" name="name" value="{{ $rs->name }}">
                     </div>
                     <br>
                     <div class="text-center">

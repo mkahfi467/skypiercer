@@ -3,6 +3,7 @@
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelTypeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('hotel', HotelController::class);
     Route::resource('hotel_types', HotelTypeController::class);
     Route::resource('product', ProductController::class);
+    Route::resource('product_types', ProductTypeController::class);
 });

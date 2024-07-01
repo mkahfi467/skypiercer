@@ -314,11 +314,27 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('product.index') }}">
-                    <i class="bi bi-box"></i>
-                    <span>Product</span>
+                <a class="nav-link collapsed" data-bs-target="#products-nav" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-box"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+                <ul id="products-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="{{ route('product.index') }}">
+                            <i class="bi bi-box"></i>
+                            <span>Product</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link collapsed" href="{{ route('product_types.index') }}">
+                            <i class="bi bi-building"></i>
+                            <span>Product Type</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
+
+
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
