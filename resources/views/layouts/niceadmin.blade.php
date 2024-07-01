@@ -334,7 +334,12 @@
                 </ul>
             </li>
 
-
+            <li class="nav-item">
+                <a href="{{ route('facility.index') }}" class="nav-link collapsed">
+                    <i class="bi bi-box"></i>
+                    <span>Facility</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"

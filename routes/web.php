@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelTypeController;
 use App\Http\Controllers\ProductController;
@@ -31,4 +32,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('hotel_types', HotelTypeController::class);
     Route::resource('product', ProductController::class);
     Route::resource('product_types', ProductTypeController::class);
+    Route::resource('facility', FacilityController::class);
 });

@@ -9,6 +9,8 @@ class Facility extends Model
 {
     use HasFactory;
 
+    protected $table = 'facilitys';
+
     public function product(){
         return $this->belongsToMany(Product::class);
     }
