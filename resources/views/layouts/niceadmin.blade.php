@@ -286,12 +286,26 @@
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('hotel.index') }}">
-                    <i class="bi bi-building"></i>
-                    <span>Hotel</span>
+                <a class="nav-link collapsed" data-bs-target="#hotels-nav" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-building"></i><span>Hotels</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
                 </a>
+                <ul id="hotels-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a class="nav-link collapsed" href="{{ route('hotel.index') }}">
+                            <i class="bi bi-building"></i>
+                            <span>Hotel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link collapsed" href="{{ route('HotelType.index') }}">
+                            <i class="bi bi-building"></i>
+                            <span>Hotel Type</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('product.index') }}">
@@ -594,9 +608,12 @@
             var navLinks = document.querySelectorAll('.nav-link');
 
             navLinks.forEach(function(navLink) {
-                if (currentUrl.includes(navLink.getAttribute('href'))) {
+                if (currentUrl == navLink.getAttribute('href')) {
                     navLink.classList.remove('collapsed');
                 }
+                // if (currentUrl.includes(navLink.getAttribute('href'))) {
+                //     navLink.classList.remove('collapsed');
+                // }
             });
         });
     </script>
