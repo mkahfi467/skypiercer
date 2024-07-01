@@ -1,8 +1,18 @@
 @extends('layouts.niceadmin')
 @section('content')
+    <div class="pagetitle">
+        <h1>Product</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Product</li>
+            </ol>
+        </nav>
+    </div>
+
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Table with stripped rows</h5>
+            <h5 class="card-title">Table Product</h5>
 
             <!-- Table with stripped rows -->
             <table class="table table-striped">
@@ -10,11 +20,11 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Rating</th>
-                        <th scope="col">Hotel Type</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Hotel</th>
+                        <th scope="col">Product Type</th>
+                        <th scope="col">Facility</th>
                         <th scope="col">
                             <a href={{ route('product.create') }}>
                                 <button class="btn btn-primary btn-sm">Tambah</button>
@@ -27,11 +37,18 @@
                         <tr>
                             <th scope="row">{{ $r->id }}</th>
                             <td>{{ $r->name }}</td>
-                            <td>{{ $r->address }}</td>
-                            <td>{{ $r->city }}</td>
-                            <td>{{ $r->type_id }}</td>
-                            <td>{{ $r->image_url }}</td>
-                            <td>{{ $r->image_url }}</td>
+                            <td>{{ $r->price }}</td>
+                            <td>{{ $r->image }}</td>
+                            <td>{{ $r->hotel->name }}</td>
+                            <td>{{ $r->type->name }}</td>
+                            <td style="width: 150px">
+                                @foreach ($r->facility as $facility)
+                                    - {{ $facility->name }} <br>
+                                    {{-- {{ $facility->name }}@if (!$loop->last)
+                                        ,
+                                    @endif --}}
+                                @endforeach
+                            </td>
                             <td>
                                 <a href="{{ route('product.edit', $r->id) }}">
                                     <button class="btn btn-warning btn-sm">Edit</button>
