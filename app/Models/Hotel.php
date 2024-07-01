@@ -9,7 +9,7 @@ class Hotel extends Model {
     use HasFactory;
 
     public function type() {
-        return $this->belongsTo(HotelType::class);
+        return $this->belongsTo(HotelType::class, 'hotel_type_id');
     }
 
     public function product() {

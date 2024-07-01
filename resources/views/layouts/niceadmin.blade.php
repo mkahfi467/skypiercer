@@ -258,12 +258,20 @@
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li>
+                        <li style="padding: 10px 15px">
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <i class="bi bi-box-arrow-right"></i>
+                                <input type="submit" value="logout" class='btn btn-sm' />
+                            </form>
+                        </li>
+
+                        {{-- <li>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
-                        </li>
+                        </li> --}}
 
                     </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->
@@ -286,10 +294,8 @@
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#hotels-nav" data-bs-toggle="collapse"
-                    href="#">
-                    <i class="bi bi-building"></i><span>Hotels</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#hotels-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-building"></i><span>Hotels</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="hotels-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -299,7 +305,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link collapsed" href="{{ route('HotelType.index') }}">
+                        <a class="nav-link collapsed" href="{{ route('hotel_types.index') }}">
                             <i class="bi bi-building"></i>
                             <span>Hotel Type</span>
                         </a>

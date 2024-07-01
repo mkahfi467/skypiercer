@@ -38,10 +38,10 @@
                             <th scope="row">{{ $r->id }}</th>
                             <td>{{ $r->name }}</td>
                             <td>{{ $r->address }}</td>
-                            <td>{{ $r->city }}</td>
-                            <td>{{ $r->type_id }}</td>
-                            <td>{{ $r->image_url }}</td>
-                            <td>{{ $r->image_url }}</td>
+                            <td>{{ $r->phone }}</td>
+                            <td>{{ $r->email }}</td>
+                            <td>{{ number_format($r->rating, 1) }}</td>
+                            <td>{{ $r->hotel_type_id }}</td>
                             <td>
                                 <a href="{{ route('hotel.edit', $r->id) }}">
                                     <button class="btn btn-warning btn-sm">Edit</button>

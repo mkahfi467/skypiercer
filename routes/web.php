@@ -27,6 +27,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('hotel', HotelController::class);
-    Route::resource('HotelType', HotelTypeController::class);
+    Route::resource('hotel_types', HotelTypeController::class);
     Route::resource('product', ProductController::class);
 });
