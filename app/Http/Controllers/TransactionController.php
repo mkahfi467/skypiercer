@@ -1,0 +1,76 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Transaction;
+use Illuminate\Http\Request;
+
+class TransactionController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
+        $rs = Transaction::all();
+        return view('transactions.index', ['rs' => $rs]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Transaction $transaction)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Transaction $transaction)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Transaction $transaction)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Transaction $transaction)
+    {
+        //
+        try {
+            $transaction->product()->detach();
+            $transaction->delete();
+
+            return redirect()->route('transaction.index')->with('status', 'Transaction deleted successfully!');
+        } catch (\Exception $e) {
+            // Handle exceptions if deletion fails
+            return redirect()->route('Transaction.index')->with('statusEror', 'Failed to delete Transaction.');
+        }
+    }
+}

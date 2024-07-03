@@ -22,7 +22,7 @@ class Product extends Model
     }
 
     public function transaction(){
-        return $this->belongsToMany(Transaction::class);
+        return $this->belongsToMany(Transaction::class, 'product_transaction', 'product_id', 'transaction_id')->withPivot('quantity', 'price');
     }
 
     public function insertFacilitys($facility, $product_id) {

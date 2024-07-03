@@ -340,6 +340,12 @@
                     <span>Facility</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('transaction.index') }}" class="nav-link collapsed">
+                    <i class="bi bi-box"></i>
+                    <span>Transaction</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
