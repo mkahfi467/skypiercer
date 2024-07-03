@@ -37,7 +37,7 @@
                         <tr>
                             <th scope="row">{{ $r->id }}</th>
                             <td>{{ $r->user->name }}</td>
-                            <td>{{ $r->total }}</td>
+                            <td>Rp. {{ $r->total }}</td>
                             <td>
                                 @foreach ($r->product as $p)
                                     - {{ $p->name }} <br>
@@ -45,23 +45,24 @@
                             </td>
                             <td>
                                 @foreach ($r->product as $p)
-                                    - {{ $p->pivot->quantity }} <br>
+                                    ({{ $p->pivot->quantity }})
+                                    <br>
                                 @endforeach
                             </td>
                             <td>
                                 @foreach ($r->product as $p)
-                                    - {{ $p->pivot->price }} <br>
+                                    Rp. {{ $p->pivot->price }} <br>
                                 @endforeach
                             </td>
                             <td>
                                 @foreach ($r->product as $p)
-                                    - {{ $p->pivot->price * $p->pivot->quantity}} <br>
+                                    Rp. {{ $p->pivot->price * $p->pivot->quantity }} <br>
                                 @endforeach
                             </td>
                             <td>
-                                <a href="{{ route('transaction.edit', $r->id) }}">
+                                {{-- <a href="{{ route('transaction.edit', $r->id) }}">
                                     <button class="btn btn-warning btn-sm">Edit</button>
-                                </a>
+                                </a> --}}
                                 <form action="{{ route('transaction.destroy', $r->id) }}" method="post"
                                     style="display: inline">
                                     @csrf
@@ -69,6 +70,7 @@
                                     <input type="submit" value="delete" class="btn btn-danger btn-sm"
                                         onclick="return confirm('Are you sure to delete {{ $r->id }} - {{ $r->name }} ?');">
                                 </form>
+
                             </td>
                         </tr>
                     @endforeach

@@ -23,10 +23,16 @@
                                                 </div>
                                                 <div class="product-image">
                                                     <a href="product-detail.html">
-                                                        @if ($p->image == null)
+                                                        {{-- @if ($p->image == null)
                                                             <img src="{{ asset('images/blank.jpg') }}">
                                                         @else
                                                             <img src="{{ asset('images/' . $p->image) }}"
+                                                                alt="Product Image">
+                                                        @endif --}}
+                                                        @if ($p->image == null)
+                                                            <img src="{{ asset('images/blank.jpg') }}">
+                                                        @else
+                                                            <img src="{{ $p->image }}"
                                                                 alt="Product Image">
                                                         @endif
                                                     </a>

@@ -7,6 +7,7 @@ use App\Http\Controllers\HotelTypeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -61,6 +62,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('product_types', ProductTypeController::class);
         Route::resource('facility', FacilityController::class);
         Route::resource('transaction', TransactionController::class);
+        Route::resource('user', UserController::class);
     });
 
     // Routes for buyer
