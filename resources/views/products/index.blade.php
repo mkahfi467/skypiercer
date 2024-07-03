@@ -38,7 +38,9 @@
                             <th scope="row">{{ $r->id }}</th>
                             <td>{{ $r->name }}</td>
                             <td>{{ $r->price }}</td>
-                            <td>{{ $r->image }}</td>
+                            <td>
+                                <img src="{{ $r->image }}" alt="" style="width: 150px; height: 150px;">
+                            </td>
                             <td>{{ $r->hotel->name }}</td>
                             <td>{{ $r->type->name }}</td>
                             <td style="width: 150px">
